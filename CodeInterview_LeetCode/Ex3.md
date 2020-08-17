@@ -48,4 +48,5 @@ findRepeatNumber (int *nums, int numsSize)
 >
 > 内存消耗：10.1 MB, 在所有 C 提交中击败了62.55%的用户
 
-一般吧，算是及格了。
+一般吧，算是及格了!
+
