@@ -67,7 +67,13 @@ buildTree (int *preorder, int preorderSize, int *inorder, int inorderSize)
 }
 ```
 
+## 结果
 
+> 执行结果：通过
+>
+> 执行用时：20 ms, 在所有 C 提交中击败了52.81%的用户
+>
+> 内存消耗：11.4 MB, 在所有 C 提交中击败了66.26%的用户
 
 ## 备注
 
