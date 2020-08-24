@@ -58,4 +58,5 @@ reversePrint (struct ListNode *head, int *returnSize)
 ## 备注
 
 - 需要注意一点，题目中的描述没有说清楚的是：returnSize这个参数需要作为输出数据，内容是数组的长度，（当然也是链表的长度）
+- 当然也可以用递归写出更简洁的代码，这里就不再赘述。
 
