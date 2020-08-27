@@ -30,7 +30,7 @@ layout: default
 
 ## 代码
 
-```C
+```c
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
