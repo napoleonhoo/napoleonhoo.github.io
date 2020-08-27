@@ -1,9 +1,9 @@
 ---
 layout: default
-Title: Napoleon Hoo's LeetCode + 《剑指Offer》
+Title: Napoleon Hoo's LeetCode + 《剑指Offer》 + C (LOC)
 ---
 
-# 本章博文介绍
+# 本章博文介绍（LOC）
 
 本系列文章主要是在阅读《剑指Offer》的基础上，利用LeetCode中国所提供的平台，使用C/C\+\+语言写成代码。
 
