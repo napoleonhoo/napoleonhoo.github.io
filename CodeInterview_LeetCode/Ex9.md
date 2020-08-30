@@ -15,12 +15,19 @@ layout: default
 
 我们可以这么来做，在输入（appendTail）的时候，将输入插入到stack1中，插入顺序10、100，如下图：
 
+![](Ex9-Fig1.jpg)
+
 当输出（deleteHead）时（暂不考虑队列中无元素）：
 
 - 将stack1中的top元素push到stack2中，然后pop，直到stack1为空，如下图：
 
+![](Ex9-Fig2.jpg)
+
 - 将stack2中的top元素存储起来（为rtn），以便返回使用；
 - 将stack2中的top元素push到stack1中，然后pop，直到stack2为空，和第一步恰巧相反，如下图：
+
+![](Ex9-Fig3.jpg)
+
 - 返回rtn。
 
 ## 代码
