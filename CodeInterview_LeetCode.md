@@ -15,3 +15,4 @@ layout: default
 - [Ex11 旋转数组中的最小数字](./CodeInterview_LeetCode/Ex11.html)
 - [Ex12 矩阵中的路径](./CodeInterview_LeetCode/Ex12.html)
 - [Ex13 机器人的运动范围](./CodeInterview_LeetCode/Ex13.html)
+- [Ex14-1 剪绳子](./CodeInterview_LeetCode/Ex14-1.html)
