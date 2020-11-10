@@ -16,3 +16,4 @@ layout: default
 - [Ex12 矩阵中的路径](./CodeInterview_LeetCode/Ex12.html)
 - [Ex13 机器人的运动范围](./CodeInterview_LeetCode/Ex13.html)
 - [Ex14-1 剪绳子](./CodeInterview_LeetCode/Ex14-1.html)
+- [Ex15 二进制中1的个数](./CodeInterview_LeetCode/Ex15.html)
