@@ -17,3 +17,4 @@ layout: default
 - [Ex13 机器人的运动范围](./CodeInterview_LeetCode/Ex13.html)
 - [Ex14-1 剪绳子](./CodeInterview_LeetCode/Ex14-1.html)
 - [Ex15 二进制中1的个数](./CodeInterview_LeetCode/Ex15.html)
+- [Ex16 数值的正数次方](./CodeInterview_LeetCode/Ex16.html)
