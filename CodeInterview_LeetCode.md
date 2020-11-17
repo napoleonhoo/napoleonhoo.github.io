@@ -21,3 +21,4 @@ layout: default
 - [Ex17 打印从1到最大的n位数](./CodeInterview_LeetCode/Ex17.html)
 - [Ex18 删除链表的结点](./CodeInterview_LeetCode/Ex18.html)
 - [Ex19 正则表达式匹配](./CodeInterview_LeetCode/Ex19.html)
+- [Ex20 表示数字的字符串](./CodeInterview_LeetCode/Ex20.html)
