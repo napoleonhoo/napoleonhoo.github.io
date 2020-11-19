@@ -25,3 +25,4 @@ layout: default
 - [Ex21 调整数组顺序使奇数位于偶数前面](./CodeInterview_LeetCode/Ex21.html)
 - [Ex22 链表中倒数第k个节点](./CodeInterview_LeetCode/Ex22.html)
 - [Ex23 反转链表](./CodeInterview_LeetCode/Ex23.html)
+- [Ex24 合并两个排序的链表](./CodeInterview_LeetCode/Ex24.html)
