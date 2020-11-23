@@ -28,3 +28,4 @@ layout: default
 - [Ex25 合并两个排序的链表](./CodeInterview_LeetCode/Ex25.html)
 - [Ex26 树的子结构](./CodeInterview_LeetCode/Ex26.html)
 - [Ex27 二叉树的镜像](./CodeInterview_LeetCode/Ex27.html)
+- [Ex28 对称二叉树](./CodeInterview_LeetCode/Ex28.html)
