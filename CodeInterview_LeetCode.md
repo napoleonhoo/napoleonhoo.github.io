@@ -31,3 +31,4 @@ layout: default
 - [Ex28 对称二叉树](./CodeInterview_LeetCode/Ex28.html)
 - [Ex29 顺时针打印矩阵](./CodeInterview_LeetCode/Ex29.html)
 - [Ex30 包含min函数的栈](./CodeInterview_LeetCode/Ex30.html)
+- [Ex31 栈的压入弹出序列](./CodeInterview_LeetCode/Ex31.html)
