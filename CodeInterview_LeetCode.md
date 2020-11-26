@@ -35,3 +35,4 @@ layout: default
 - [Ex32-I 从上到下打印二叉树](./CodeInterview_LeetCode/Ex32_1.html)
 - [Ex32-II 从上到下打印二叉树II](./CodeInterview_LeetCode/Ex32_2.html)
 - [Ex32-III 从上到下打印二叉树III](./CodeInterview_LeetCode/Ex32_3.html)
+- [Ex33 二叉搜索树的后序遍历序列](./CodeInterview_LeetCode/Ex33.html)
