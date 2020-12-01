@@ -38,3 +38,4 @@ layout: default
 - [Ex33 二叉搜索树的后序遍历序列](./CodeInterview_LeetCode/Ex33.html)
 - [Ex34 二叉树中和为某一值的路径](./CodeInterview_LeetCode/Ex34.html)
 - [Ex35 复杂链表的复制](./CodeInterview_LeetCode/Ex35.html)
+- [Ex36 二叉搜索树与双向链表](./CodeInterview_LeetCode/Ex36.html)
