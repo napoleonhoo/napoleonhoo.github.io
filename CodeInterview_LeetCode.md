@@ -41,3 +41,4 @@ layout: default
 - [Ex36 二叉搜索树与双向链表](./CodeInterview_LeetCode/Ex36.html)
 - [Ex37 序列化二叉树](./CodeInterview_LeetCode/Ex37.html)
 - [Ex38 字符串的排列](./CodeInterview_LeetCode/Ex38.html)
+- [Ex39 数组中出现次数超过一半的数字](./CodeInterview_LeetCode/Ex39.html)
