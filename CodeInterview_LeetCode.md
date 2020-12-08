@@ -42,3 +42,5 @@ layout: default
 - [Ex37 序列化二叉树](./CodeInterview_LeetCode/Ex37.html)
 - [Ex38 字符串的排列](./CodeInterview_LeetCode/Ex38.html)
 - [Ex39 数组中出现次数超过一半的数字](./CodeInterview_LeetCode/Ex39.html)
+- [Ex40 最小的k个数](./CodeInterview_LeetCode/Ex40.html)
+- [Ex41 数据流的中位数](./CodeInterview_LeetCode/Ex41.html)
