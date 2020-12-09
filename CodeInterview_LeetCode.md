@@ -44,3 +44,4 @@ layout: default
 - [Ex39 数组中出现次数超过一半的数字](./CodeInterview_LeetCode/Ex39.html)
 - [Ex40 最小的k个数](./CodeInterview_LeetCode/Ex40.html)
 - [Ex41 数据流的中位数](./CodeInterview_LeetCode/Ex41.html)
+- [Ex42 连续子数组的最大和](./CodeInterview_LeetCode/Ex42.html)
