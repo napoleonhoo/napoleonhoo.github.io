@@ -45,3 +45,4 @@ layout: default
 - [Ex40 最小的k个数](./CodeInterview_LeetCode/Ex40.html)
 - [Ex41 数据流的中位数](./CodeInterview_LeetCode/Ex41.html)
 - [Ex42 连续子数组的最大和](./CodeInterview_LeetCode/Ex42.html)
+- [Ex44 数字序列中某一位数字](./CodeInterview_LeetCode/Ex44.html)
