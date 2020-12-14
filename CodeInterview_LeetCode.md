@@ -48,3 +48,4 @@ layout: default
 - [Ex44 数字序列中某一位数字](./CodeInterview_LeetCode/Ex44.html)
 - [Ex45 把数组排成最小的数](./CodeInterview_LeetCode/Ex45.html)
 - [Ex46 把数字翻译成字符串](./CodeInterview_LeetCode/Ex46.html)
+- [Ex47 礼物的最大价值](./CodeInterview_LeetCode/Ex47.html)
