@@ -45,6 +45,7 @@ layout: default
 - [Ex40 最小的k个数](./CodeInterview_LeetCode/Ex40.html)
 - [Ex41 数据流的中位数](./CodeInterview_LeetCode/Ex41.html)
 - [Ex42 连续子数组的最大和](./CodeInterview_LeetCode/Ex42.html)
+- [Ex43 1~n整数中1出现的次数](./CodeInterview_LeetCode/Ex43.html)
 - [Ex44 数字序列中某一位数字](./CodeInterview_LeetCode/Ex44.html)
 - [Ex45 把数组排成最小的数](./CodeInterview_LeetCode/Ex45.html)
 - [Ex46 把数字翻译成字符串](./CodeInterview_LeetCode/Ex46.html)
