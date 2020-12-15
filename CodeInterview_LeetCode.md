@@ -50,3 +50,4 @@ layout: default
 - [Ex46 把数字翻译成字符串](./CodeInterview_LeetCode/Ex46.html)
 - [Ex47 礼物的最大价值](./CodeInterview_LeetCode/Ex47.html)
 - [Ex48 最长不含重复字符的子字符串](./CodeInterview_LeetCode/Ex48.html)
+- [Ex49 丑数](./CodeInterview_LeetCode/Ex49.html)
