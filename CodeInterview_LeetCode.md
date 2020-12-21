@@ -55,3 +55,4 @@ layout: default
 - [Ex50 第一个只出现一次的字符](./CodeInterview_LeetCode/Ex50.html)
 - [Ex52 两个链表的第一个公共节点](./CodeInterview_LeetCode/Ex52.html)
 - [Ex53-II 0~n-1中缺失的数字](./CodeInterview_LeetCode/Ex53_2.html)
+- [Ex54 二叉搜索树的第k大节点](./CodeInterview_LeetCode/Ex54.html)
