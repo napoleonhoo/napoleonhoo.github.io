@@ -17,7 +17,7 @@ layout: default
 
 ## 代码
 
-```C
+```c
 int
 findRepeatNumber (int *nums, int numsSize)
 {
