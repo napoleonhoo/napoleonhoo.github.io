@@ -56,4 +56,5 @@ layout: default
 - [Ex52 两个链表的第一个公共节点](./CodeInterview_LeetCode/Ex52.html)
 - [Ex53-II 0~n-1中缺失的数字](./CodeInterview_LeetCode/Ex53_2.html)
 - [Ex54 二叉搜索树的第k大节点](./CodeInterview_LeetCode/Ex54.html)
-- [Ex55-I 平衡二叉树](./CodeInterview_LeetCode/Ex55_1.html)
+- [Ex55-I 二叉树的深度](./CodeInterview_LeetCode/Ex55_1.html)
+- [Ex55-II 平衡二叉树](./CodeInterview_LeetCode/Ex55_2.html)
