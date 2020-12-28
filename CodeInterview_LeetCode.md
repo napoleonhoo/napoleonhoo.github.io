@@ -61,3 +61,4 @@ layout: default
 - [Ex56-I 数组中数字出现的次数](./CodeInterview_LeetCode/Ex56_1.html)
 - [Ex56-II 数组中数字出现的次数II](./CodeInterview_LeetCode/Ex56_2.html)
 - [Ex57 和为s的两个数字](./CodeInterview_LeetCode/Ex57.html)
+- [Ex57-II 和为s的连续整数序列](./CodeInterview_LeetCode/Ex57_2.html)
