@@ -60,3 +60,4 @@ layout: default
 - [Ex55-II 平衡二叉树](./CodeInterview_LeetCode/Ex55_2.html)
 - [Ex56-I 数组中数字出现的次数](./CodeInterview_LeetCode/Ex56_1.html)
 - [Ex56-II 数组中数字出现的次数II](./CodeInterview_LeetCode/Ex56_2.html)
+- [Ex57 和为s的两个数字](./CodeInterview_LeetCode/Ex57.html)
