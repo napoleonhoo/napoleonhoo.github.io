@@ -63,3 +63,4 @@ layout: default
 - [Ex57 和为s的两个数字](./CodeInterview_LeetCode/Ex57.html)
 - [Ex57-II 和为s的连续整数序列](./CodeInterview_LeetCode/Ex57_2.html)
 - [Ex58-I 反转单词顺序](./CodeInterview_LeetCode/Ex58_1.html)
+- [Ex58-II 左旋转字符串](./CodeInterview_LeetCode/Ex58_2.html)
