@@ -1,6 +1,6 @@
 ---
 layout: default
-title: C++
+title: C++/Source Code Study
 ---
 
 # Content
