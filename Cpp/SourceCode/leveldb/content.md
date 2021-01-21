@@ -1,6 +1,6 @@
 ---
 layout: default
-title: C++/Souce Code Study/LevelDB
+title: LevelDB
 ---
 
 # Content
