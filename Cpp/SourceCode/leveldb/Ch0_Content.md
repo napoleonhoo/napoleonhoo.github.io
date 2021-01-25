@@ -15,6 +15,6 @@ Chapter2讲述了LevelDB中使用的基础组件，不直接涉及LevelDB的核�
 - [Ch2.2 SkipList](./Ch2.2_SkipList.html)
 - [Ch2.3 Slice](./Ch2.3_Slice.html) 
 - [Ch2.4 FilterPolicy](./Ch2.4_FilterPolicy.html)
-- [Ch2.5 FilterPolicy](./Ch2.5_BloomFilterPolicy.html)
-- [Ch2.6 FilterPolicy](./Ch2.6_Env.html)
+- [Ch2.5 BloomFilterPolicy](./Ch2.5_BloomFilterPolicy.html)
+- [Ch2.6 Env](./Ch2.6_Env.html)
 
