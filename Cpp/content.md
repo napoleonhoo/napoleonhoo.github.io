@@ -4,4 +4,4 @@ title: C++
 ---
 
 # Content
-- [Source Code](./SourceCode/content.html)
+- [Source Code Study](./SourceCode/content.html)
