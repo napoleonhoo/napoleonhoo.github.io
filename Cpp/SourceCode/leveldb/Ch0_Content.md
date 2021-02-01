@@ -22,6 +22,6 @@ Chapter2讲述了LevelDB中使用的基础组件，不直接涉及LevelDB的核�
 - [Ch2.9 Status](Ch2.9_Status.html)
 - [Ch2.10 Port](./Ch2.10_Port.html)
 - [Ch2.11 Cache](./Ch2.11_Cache.html)
+- [Ch2.12 Coding](./Ch2.12_Coding.html)
+- [Ch2.13 Comparator](./Ch2.13_Comparator.html)
 
-* [Ch2.12 Coding](./Ch2.12_Coding.html)
-* 
