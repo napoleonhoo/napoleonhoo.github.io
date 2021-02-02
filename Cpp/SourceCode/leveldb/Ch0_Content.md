@@ -29,3 +29,4 @@ Chapter2讲述了LevelDB中使用的基础组件，不直接涉及LevelDB的核�
 Chapter3正式开始讲述LevelDB的核心功能。
 
 * [Ch3.1 Iterator](./Ch3.1_Iterator.html)
+* [Ch3.2 Internal](./Ch3.2_Internal.html)

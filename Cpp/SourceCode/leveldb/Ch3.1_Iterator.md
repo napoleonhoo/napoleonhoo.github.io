@@ -3,7 +3,7 @@
 ## 1 路径
 
 * include/levedl/iterator.h
-* table/iteratr.cc
+* table/iterator.cc
 
 ## 2 功能
 
