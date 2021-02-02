@@ -9,7 +9,7 @@
 
 ## 3 相关函数
 
-* Fixed固定长度编码：将数字（uint32_t/uint64_t）的低字节（LSB）放到buffer（uint8_t*）的第0位，高字节（MSB）放到buffer的第3/7位。解码刚好相反。具体代码如下：
+* Fixed固定长度编码：将数字（uint32_t/uint64_t）的低字节（LSB）放到buffer（uint8_t\*）的第0位，高字节（MSB）放到buffer的第3/7位。解码刚好相反。具体代码如下：
 
 ```cpp
 void PutFixed32(std::string* dst, uint32_t value) {
