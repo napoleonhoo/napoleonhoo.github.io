@@ -256,7 +256,75 @@ bool InternalFilterPolicy::KeyMayMatch(const Slice& key, const Slice& f) const {
 }
 ```
 
-## 7 相关函数
+## 7 LookupKey
+
+主要代码如下，重点在其构造函数：
+
+```cpp
+// A helper class useful for DBImpl::Get()
+class LookupKey {
+ public:
+  // Initialize *this for looking up user_key at a snapshot with
+  // the specified sequence number.
+  LookupKey(const Slice& user_key, SequenceNumber sequence);
+
+  LookupKey(const LookupKey&) = delete;
+  LookupKey& operator=(const LookupKey&) = delete;
+
+  ~LookupKey();
+
+  // Return a key suitable for lookup in a MemTable.
+  Slice memtable_key() const { return Slice(start_, end_ - start_); }
+
+  // Return an internal key (suitable for passing to an internal iterator)
+  Slice internal_key() const { return Slice(kstart_, end_ - kstart_); }
+
+  // Return the user key
+  Slice user_key() const { return Slice(kstart_, end_ - kstart_ - 8); }
+
+ private:
+  // We construct a char array of the form:
+  //    klength  varint32               <-- start_
+  //    userkey  char[klength]          <-- kstart_
+  //    tag      uint64
+  //                                    <-- end_
+  // The array is a suitable MemTable key.
+  // The suffix starting with "userkey" can be used as an InternalKey.
+  const char* start_;
+  const char* kstart_;
+  const char* end_;
+  char space_[200];  // Avoid allocation for short keys
+};
+
+inline LookupKey::~LookupKey() {
+  if (start_ != space_) delete[] start_;
+}
+
+LookupKey::LookupKey(const Slice& user_key, SequenceNumber s) {
+  size_t usize = user_key.size();
+  size_t needed = usize + 13;  // A conservative estimate
+  char* dst;
+  if (needed <= sizeof(space_)) {
+    dst = space_;
+  } else {
+    dst = new char[needed];
+  }
+  start_ = dst;
+  dst = EncodeVarint32(dst, usize + 8);
+  kstart_ = dst;
+  std::memcpy(dst, user_key.data(), usize);
+  dst += usize;
+  EncodeFixed64(dst, PackSequenceAndType(s, kValueTypeForSeek));
+  dst += 8;
+  end_ = dst;
+}
+```
+
+如此可见，LookupKey的主要数据结构应为：
+
+![LookupKey](./LevelDB_LookupKey.png)
+
+## 8 相关函数
 
 * 从InternalKey中提取出UserKey。
 
