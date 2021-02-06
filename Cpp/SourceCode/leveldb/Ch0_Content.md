@@ -33,4 +33,5 @@ Chapter3正式开始讲述LevelDB的核心功能。
 - [Ch3.3 MemTable](./Ch3.3_MemTable.html)
 - [Ch3.4 BlockBuilder](./Ch3.4_BlockBuilder.html)
 - [Ch3.5 FilterBlock](./Ch3.5_FilterBlock.html)
+- [Ch3.6 Block](./Ch3.6_Block.html)
 
