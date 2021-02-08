@@ -324,7 +324,7 @@ Status TableBuilder::Finish() {
 }
 ```
 
-MetaIndexBlock的数据部分如图所示：
+MetaIndexBlock的数据部分如图所示（以默认的bloom过滤器为例）：
 
 ![MetaIndexBlock](./LevelDB_TableBuilder_MetaIndexBlock.png)
 
