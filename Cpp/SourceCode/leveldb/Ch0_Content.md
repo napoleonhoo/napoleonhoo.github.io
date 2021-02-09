@@ -37,4 +37,4 @@ Chapter3正式开始讲述LevelDB的核心功能。
 - [Ch3.7 TableBuilder](./Ch3.7_TableBuilder.html)
 - [Ch3.8 TwoLevelIterator](Ch3.8_TwoLevelIterator.html)
 - [Ch3.9 Table](./Ch3.9_Table.html)
-
+- [Ch3.10 TableCache](./Ch3.10_TableCache.html)
