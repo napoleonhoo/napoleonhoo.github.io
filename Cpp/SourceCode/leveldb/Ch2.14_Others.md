@@ -53,3 +53,21 @@ class NoDestructor {
 };
 ```
 
+## 6 Filename
+
+* 路径：db/filename.h db/filename.cc
+
+* 功能：组成和解析leveldb所需要的各种文件名。
+
+  * LogFileName: dbname/[0-9]+\\.log
+  * TableFileName: dbname/[0-9]+\\.ldb
+  * SSTTableFileName: dbname/[0-9]+\\.sst
+  * DescriptorFileName: dbname/MANIFEST-[0-9]+
+  * CurrentFileName: dbname/CURRENT
+  * LockFileName:  dbname/LOCK
+  * TempFileName:
+  * InfoLogFileName: dbname/LOG
+  * OldInfoLogFileName: dbname/LOG.old
+  * TempFileName: dbname/[0-9]+\\.sst
+
+  备注：上述涉及到数字的部分要符合`uint64_t`的要求。
