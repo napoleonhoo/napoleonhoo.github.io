@@ -19,7 +19,7 @@
 $$
 h(i, k)\ =\ h_1(k)\ +\ i\ \times\ h_2(i,\ k)\ MOD\ |T|
 $$
-其中，$${h_1}$$、$${h_2}$$是两个Hash函数，$${i}$$是Hash表中的位置，$${k}$$是位置$${i}$$对应的值，$${|T|}$$是Hash表的大小。
+其中，${h_1}$、${h_2}$是两个Hash函数，${i}$是Hash表中的位置，${k}$是位置${i}$对应的值，${|T|}$是Hash表的大小。
 
 ## 4 主要成员变量
 
@@ -44,7 +44,7 @@ k_ = static_cast<size_t>(bits_per_key * 0.69);  // 0.69 =~ ln(2)
   ```
 
   * 将`k_`记录在`dst`的最后一个元素中，表示此filter需要探测的次数。
-  * 对每个key，计算一个值放入bitmap（实际上是`char*`）。此处用到的公式是Double Hashing。$${h_1}$$是名为`BloomHash`的一个自定义Hash函数，$${h_2}$$是delta，即h右移17位的结果。根据Hash函数，将过滤器的某一位置1。具体代码如下：
+  * 对每个key，计算一个值放入bitmap（实际上是`char*`）。此处用到的公式是Double Hashing。${h_1}$是名为`BloomHash`的一个自定义Hash函数，${h_2}$是delta，即h右移17位的结果。根据Hash函数，将过滤器的某一位置1。具体代码如下：
 
   ```cpp
   const size_t init_size = dst->size();

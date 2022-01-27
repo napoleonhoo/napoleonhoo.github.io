@@ -243,7 +243,7 @@ Env在POSIX上的实现。
 * `int MaxOpenFiles();`返回只读文件保持打开的上限。具体步骤如下：
   * 当`g_open_read_only_file_limit`大于0时，则表示其已经初始化过了，直接返回这个值。否则，
   * 调用库函数`getrlimit`，得到目前系统设置的上限值。
-  * 调用失败时，将其默认值设为50；否则当返回的软限值为无限时，其设置为`std::numeric_limits<int>::max()`；否则，其设置为软限值的$${\frac{1}{5}}$$，即20%。
+  * 调用失败时，将其默认值设为50；否则当返回的软限值为无限时，其设置为`std::numeric_limits<int>::max()`；否则，其设置为软限值的${\frac{1}{5}}$，即20%。
   * 返回`g_open_read_only_file_limit`。
 * `int LockOrUnlock(int fd, bool lock);`根据传入参数`lock`的true或false，调用库函数`cntl`对文件`fd`进行加锁或解锁。
 
