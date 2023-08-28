@@ -20,7 +20,7 @@ std::pair answer = {"forty-two", 42};
 std::tuple cue = {3, 2, 1, "go!"};
 
 // map
-std::map<int, std::string> numbers = {{1, "one"}, {2, "two"}, {3, "three"}};
+// std::map<int, std::string> numbers = {{1, "one"}, {2, "two"}, {3, "three"}};
 ```
 
 ## 2 向函数传递复合参数
