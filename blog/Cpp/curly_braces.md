@@ -9,7 +9,7 @@ Reference:
 
 ## 1 填充各类容器
 
-```cpp
+``` cpp
 // vector
 std::vector<std::string> words = {"the", "mortar", "hoding", "code", "together"};
 
@@ -25,7 +25,7 @@ std::map<int, std::string> numbers = {{1, "one"}, {2, "two"}, {3, "three"}};
 
 ## 2 向函数传递复合参数
 
-```cpp
+``` cpp
 // function 1
 void display(std::vector<int> const& values);
 
@@ -39,7 +39,7 @@ display({1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
 
 ## 3 从函数返回复合值或对象
 
-```cpp
+``` cpp
 std::vector<int> numbers() {
 	return {0, 1, 2, 3, 4, 5};
 }
@@ -55,7 +55,7 @@ Point p = {1, 2, 3};
 
 ## 5 RAII
 使用大括号来圈起来一段作用域。
-```cpp
+``` cpp
 {
 	std::unique_ptr<X> myResource = nullptr;
 }
