@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # C++中的cast（强制类型转换）
 
 ## 1. static_cast

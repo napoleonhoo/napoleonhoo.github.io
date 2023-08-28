@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # 预编译指令——\#error
 
 使用protobuf时，protoc自动生成的pb.h中，有这样的一段代码：

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # sizeof & size_t & %zu
 
 ## 1. sizeof的两种用法

@@ -1,6 +1,6 @@
 # § type_traits
 
-#### integral_const
+## 1 `integral_const`
 
 ``` cpp
   /// integral_constant
@@ -32,7 +32,7 @@ std::cout << two::value << std::endl; // output: 2
 
 
 
-#### true_type & false_type
+## 2 `true_type` & `false_type`
 
 ``` cpp
   /// The type used as a compile-time boolean with true value.
@@ -46,7 +46,7 @@ true_type和false_type是一种type，它们的value是true和false。这个很�
 
 
 
-#### condition
+## 3 `condition`
 
 ``` cpp
   template<bool _Cond, typename _Iftrue, typename _Iffalse>
@@ -63,7 +63,7 @@ true_type和false_type是一种type，它们的value是true和false。这个很�
 
 
 
-#### Is_void
+## 4 `is_void`
 
 ``` cpp
   template<typename>
@@ -83,7 +83,7 @@ true_type和false_type是一种type，它们的value是true和false。这个很�
 
 
 
-#### remove_cv
+## 5 `remove_cv`
 
 ``` cpp
   /// remove_cv
@@ -106,7 +106,7 @@ true_type和false_type是一种type，它们的value是true和false。这个很�
 
 
 
-##### \_\_detected_or
+## 6 `__detected_or`
 
 ``` cpp
  /// Implementation of the detection idiom (negative case).
@@ -137,5 +137,39 @@ true_type和false_type是一种type，它们的value是true和false。这个很�
 	   typename... _Args>
     using __detected_or_t
       = typename __detected_or<_Default, _Op, _Args...>::type;
+```
+
+
+
+## 7 `_aligned_storage`
+
+``` cpp
+template <std::size_t _Len>
+struct __aligned_storage_msa {
+    union __type {
+        unsigned char __data[_Len];
+        struct __attribute__((__aligned__)) {
+        } __align;
+    };
+};
+
+/**
+ *  @brief Alignment type.
+ *
+ *  The value of _Align is a default-alignment which shall be the
+ *  most stringent alignment requirement for any C++ object type
+ *  whose size is no greater than _Len (3.9). The member typedef
+ *  type shall be a POD type suitable for use as uninitialized
+ *  storage for any object whose size is at most _Len and whose
+ *  alignment is a divisor of _Align.
+ */
+template <std::size_t _Len, std::size_t _Align = __alignof__(typename __aligned_storage_msa<_Len>::__type)>
+struct aligned_storage {
+    union type {
+        unsigned char __data[_Len];
+        struct __attribute__((__aligned__((_Align)))) {
+        } __align;
+    };
+};
 ```
 

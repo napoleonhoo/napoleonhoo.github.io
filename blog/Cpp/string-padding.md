@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # 使用string的基本操作实现padding
 
 ## 1 来源

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Designated Initializers （指定初始化）
 
 ## 1. struct
