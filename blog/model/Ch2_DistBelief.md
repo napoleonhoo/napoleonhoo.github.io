@@ -1,3 +1,8 @@
+---
+layout: default
+titile: 模型
+---
+
 # DistBelief
 
 [原始论文见此](https://static.googleusercontent.com/media/research.google.com/zh-CN//archive/large_deep_networks_nips2012.pdf)
