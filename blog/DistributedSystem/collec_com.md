@@ -7,23 +7,32 @@ layout: default
 - MPI（Message Passing Interface），是一个协议。
 - gloo，facebook对集合通信的实现。
 
+## 概念
+
+Reference: [Collective operation - Wikipedia](https://en.wikipedia.org/wiki/Collective_operation)
+
+集合通信，经常用在并行编程中的SPMD算法。
+
+## 主要Operation
+
 Reference：
 - https://scc.ustc.edu.cn/zlsc/cxyy/200910/MPICH/
 - https://www.mpi-forum.org/docs/mpi-1.1/mpi-11-html/node64.html
 - https://www.open-mpi.org/doc/current/man3/MPI_Allreduce.3.php
-# 主要的操作及释义
-## 图示主要操作
+
+### 图示主要操作
 
 ![](./CC.png)
 
-## Barrier Synchronization
+### Barrier Synchronization
 ```c
 MPI_BARRIER(comm) 
 　IN　　comm　　通信子(句柄)
 int MPI_Barrier(MPI_Comm comm)
 ```
 MPI_BARRIER阻塞所有的调用者直到所有的组成员都调用了它,仅当所有的组成员都进入了这个调用后,各个进程中这个调用才可以返回.
-## Broadcast
+
+### Broadcast
 ```c
 MPI_BCAST(buffer,count,datatype,root,comm) 
 　IN/OUT　buffer　　  通信消息缓冲区的起始地址(可变)
@@ -34,7 +43,8 @@ MPI_BCAST(buffer,count,datatype,root,comm)
 int MPI_Bcast(void* buffer,int count,MPI_Datatype datatype,int root, MPI_Comm comm)
 ```
 MPI_BCAST是从一个序列号为root的进程将一条消息广播发送到组内的所有进程,包括它本身在内.调用时组内所有成员都使用同一个comm和root,其结果是将根的通信消息缓冲区中的消息拷贝到其他所有进程中去.
-## Gather
+
+### Gather
 ```c
 MPI_GATHER(sendbuf, sendcount, sendtype, recvbuf, recvcount, recvtype, root , comm)
 　IN　sendbuf   　发送消息缓冲区的起始地址(可变)
@@ -58,7 +68,8 @@ MPI_Send(sendbuf, sendcount, sendtype, root, ...)
 MPI_Recv(recvbuf+i*recvcount*extent(recvtype), recvcount, recvtype, i,...)
 ```
 此处extent(recvtype)是调用函数MPI_Type_extent()所返回的类型,另外一种描述就象是组中的n个进程发送的n条消息按照它们的序列号连接起来,根进程通过调用MPI_RECV(recvbuf, recvcount*n, recvtype,...) 来将结果消息接收过来.
-## Scatter
+
+### Scatter
 ```c
 MPI_SCATTER(sendbuf,sendcount,sendtype,recvbuf,recvcount,recvtype,
             root,comm)
@@ -84,7 +95,8 @@ MPI_Send(sendbuf+i*sendcount*extent(sendtype),sendcount,sendtype,i,...)
 MPI_Recv(recvbuf,recvcount,recvtype,i,...)
 ```
 另外一种解释是根进程通过MPI_Send(sendbuf,sendcount*n,sendtype,...)发送一条消息,这条消息被分成n等份,第i份发送给组中的第i个处理器, 然后每个处理器如上所述接收相应的消息.
-## Allgather
+
+### Allgather
 ```c
 MPI_ALLGATHER(sendbuf, sendcount, sendtype, recvbuf, recvcount,
               recvtype,comm)
@@ -106,7 +118,8 @@ MPI_GATHER(sendbuf,sendcount,sendtype,recvbuf,recvcount,recvtype,
            root,comm)
 ```
 其中root从0到n-1.有关于MPI_ALLGATHER的正确使用方法和MPI_GATHER相同.
-## Alltoall
+
+### Alltoall
 ```c
 MPI_ALLTOALL(sendbuf, sendcount, sendtype, recvbuf, recvcount,
              recvtype, comm)
@@ -132,7 +145,8 @@ MPI_Send(sendbuf+i*sendcount*extent(sendtype),sendcount,
 MPI_Recv(recvbuf+i*recvcount*extent(recvtype),recvcount,i,...)
 ```
 所有参数对每个进程都是很重要的,而且所有进程中的comm值必须一致.
-## Reduce
+
+### Reduce
 ```c
 MPI_REDUCE(sendbuf,recvbuf,count,datatype,op,root,comm)
  IN   sendbuf   发送消息缓冲区的起始地址(可变)
@@ -162,7 +176,8 @@ MPI_REDUCE将组内每个进程输入缓冲区中的数据按op操作组合起�
         MPI_MAXLOC        最大值且相应位置
         MPI_MINLOC        最小值且相应位置
 ```
-## Allreduce
+
+### Allreduce
 ```c
 MPI_ALLREDUCE(sendbuf, recvbuf, count, datatype, op, comm)
  IN   sendbuf     发送消息缓冲区的起始地址(可变)
@@ -175,7 +190,8 @@ int MPI_Allreduce(void* sendbuf, void* recvbuf, int count,
                   MPI_Datatype datatype, MPI_Op op, MPI_Comm comm)
 ```
 MPI中还包括对每个归约操作的变形,即将结果返回到组内的所有进程.MPI要求组内所有参与的进程都归约同一个结果.除了将结果返回给组内的所有成员外,其他同MPI_REDUCE.
-## ReduceScatter
+
+### ReduceScatter
 ```c
 MPI_REDUCE_SCATTER(sendbuf, recvbuf, recvcounts, datatype, op, comm)
  IN   sendbuf       发送消息缓冲区的起始地址(可变)
@@ -190,7 +206,8 @@ int MPI_Reduce_scatter(void* sendbuf, void* recvbuf, int *recvcounts
                        MPI_Datatype datatype, MPI_Op op, MPI_Comm comm)
 ```
 MPI_REDUCE_SCATTER对由sendbuf、count和datatype定义的发送缓冲区中的数组逐个元素进行归约操作,这个数组的长度count = ∑irecvcount[i].然后, 这个结果向量被分成n个互不连通的部分,这里n为组中成员数.第i段中包含recvcounts[i]个元素,第i段发送到进程i并且存放在由recvbuf、recvcounts[i]和datatype定义的输入缓冲区中.
-## Scan
+
+### Scan
 ```c
 MPI_SCAN(sendbuf, recvbuf, count, datatype, op, comm)
  IN   sendbuf    发送消息缓冲区的起始地址(可变)
@@ -202,9 +219,10 @@ MPI_SCAN(sendbuf, recvbuf, count, datatype, op, comm)
 int MPI_Scan(void* sendbuf, void* recvbuf, int count,
              MPI_Datatype datatype, MPI_Op op, MPI_Comm comm)
 ```
-MPI_SCAN常用于对分布于组中的数据作前置归约操作.此操作将序列号为0,... ,i(包括i)的进程发送缓冲区的值的归约结果存入序列号为i 的进程的接收消息缓冲区中,这种操作支持的类型、语义以及对发送及接收缓冲区的限制和MPI_REDUCE相同.
-# 点对点通信常用函数以及内置数据类型
-## Send
+MPI_SCAN常用于对分布于组中的数据作前置归约操作.此操作将序列号为0,... ,i(包括i)的进程发送缓冲区的值的归约结果存入序列号为i 的进程的接收消息缓冲区中,这种操作支持的类型、语义以及对发送及接收缓冲区的限制和`MPI_REDUCE`相同.
+
+## 点对点通信常用函数以及内置数据类型
+### Send
 ```c
 MPI_SEND(buf,count,datatype,dest,tag,comm)
     IN buf 发送缓存的起始地址(选择型)
@@ -227,7 +245,7 @@ MPI_RECV(buf,count,datatype,source,tag,comm,status)
     OUT status 状态对象(状态)
 int MPI_Recv(void* buf, int count, MPI_Datatype datatype, int source, int tag, MPI_Comm comm, MPI_Status *status)
 ```
-## Datatype
+### Datatype
 ```c
      MPI datatype            C datatype 
      MPI_CHAR                signed char 
