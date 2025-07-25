@@ -7,8 +7,6 @@ titile: 模型
 
 [原始论文见此](https://static.googleusercontent.com/media/research.google.com/zh-CN//archive/large_deep_networks_nips2012.pdf)
 
-
-
 ## 1 主要工作
 
 模型并行、数据并行。
