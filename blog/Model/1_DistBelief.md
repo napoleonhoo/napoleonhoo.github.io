@@ -35,7 +35,7 @@ DistBelief的目标不只是在模型的单个实例之间并行，但是要在�
 
 
 
-![DistBelief-1](./DistBelief-1.png)
+![DistBelief-1](./1_DistBelief-1.png)
 
 
 
@@ -48,13 +48,11 @@ Downpour SGD是一种异步随机梯度下降算法，使用单个DistBelief模�
 Downpour SGD比起同步SGD对机器失败更具有鲁棒性。对于同步SGD，如果一个机器失败了，那么整个训练过程都会延迟。但是对于异步SGD，如果一个模型副本的机器是失败了，其他的模型副本会继续训练数据、利用参数服务器更新参数。
 
 
-
 ### 3.2 Sandblaster L-BFGS
 
 Sandblaster L-BFGS存在于coordinator进程中，它不会直接访问模型参数。coordinator从一个操作的小集合中发布指令，它可以由每个参数服务器独立地执行，结果被存储在本地。额外的信息也存储在参数服务器分片上。
 
 负载均衡算法：coordinator分配给N个模型副本以工作量的一小部分，比第1/N个batch的总量要小，并且当它们空闲的时候，分配给这些模型副本以新的工作。为了更进一步地管理每个batch结尾最后最慢的几个模型副本，coordinator调度几个未完成的工作部分，并且将其分配给最先完成工作的几个模型副本。预取数据，并且通过给同样的worker以连续的数据部分支持了数据之间的联系，使得数据访问不再是一个问题。与Downpour SGD不同，Sandblaster的worker只在每个batch开始的之后取参数，并且只每个完成工作的部分发送梯度（来防止模型副本失败和重启）。
-
 
 
 ## 4 文中部分名词解释
