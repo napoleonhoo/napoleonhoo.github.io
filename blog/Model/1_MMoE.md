@@ -3,7 +3,7 @@ layout: default
 titile: 模型
 ---
 
-# MMoE论文研读
+# MMoE 论文研读
 
 论文：*Modeling Task Relationships in Multi-task Learning With Multi-gate Mixture-of-experts*
 
