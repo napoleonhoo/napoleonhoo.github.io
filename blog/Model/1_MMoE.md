@@ -3,22 +3,18 @@ layout: default
 titile: 模型
 ---
 
-# MMoE论文研读
+# MMoE 论文研读
 
 论文：*Modeling Task Relationships in Multi-task Learning With Multi-gate Mixture-of-experts*
-
 
 
 ## 要解决的问题
 
 常用的多任务（multi-task）模型对于任务之间的关系很敏感。
 
-
-
 ## 目标
 
 构建一个模型，可以**同时**学习多目标、多任务。捕捉到任务的不同，且不显著增加更多的模型参数（和Shared-Bottem多任务模型相比）。
-
 
 
 ## MMoE简介
@@ -33,8 +29,7 @@ MMoE很容易训练，并且在几个回合就会收敛到一个比较好的损�
 
 图1-a是shared-bottom结构，在input层之后的多个bottom层，由各个task共享，在这之上，每个task都有一个单独的tower网络。图1-c是MMoE网络，有着一群叫做expert的bottom网络。gate网络把输入的特征作为输入，输出集合不同权重的softmax gate，使得不同的任务区别使用不同的expert。整合后的expert被传输到不同的tower网络。
 
-![MMoE 图1](./MMoE.png)
-
+![MMoE 图1](./1_MMoE.png)
 
 
 ## 网络结构详解
