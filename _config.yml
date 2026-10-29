@@ -6,3 +6,8 @@ show_downloads: false
 timezone: Asia/Shanghai
 google_analytics:
 theme: jekyll-theme-cayman
+
+# jekyll-github-metadata 需要知道仓库是哪个才能填充 site.github.* 字段。
+# 不显式指定时它依赖 git remote / 环境变量去推断，一旦推断失败，
+# 在 JEKYLL_ENV=production 下会直接中断构建（development 下只是警告）。
+repository: napoleonhoo/napoleonhoo.github.io

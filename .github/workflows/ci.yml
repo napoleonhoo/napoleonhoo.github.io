@@ -30,14 +30,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 版本号只在 .ruby-version 里维护一处，本地（rbenv）与 CI 共用，
-      # 避免两边各自漂移导致“本地能构建、CI 失败”。
+      # 不传 ruby-version，setup-ruby 会自动读取 .ruby-version
+      # （该输入的默认值即为 "default"，语义是从 .ruby-version /
+      # .tool-versions / mise.toml 读取）。这样版本号只在一处维护，
+      # 本地 rbenv 与 CI 共用同一个来源。
+      # 注意：这个 action 没有 ruby-version-file 输入，传了会被忽略。
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version-file: .ruby-version
           bundler-cache: true
 
       - name: jekyll build
         env:
           JEKYLL_ENV: production
+          # jekyll-github-metadata 要调 GitHub API 取仓库信息。匿名请求限额是
+          # 60 次/小时/IP，而 runner 出口 IP 是共享的，极易撞限流；在
+          # production 下这会升级成致命错误。GITHUB_TOKEN 由 Actions 自动注入，
+          # 无需在仓库里配置任何 secret。
+          JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: bundle exec jekyll build --trace

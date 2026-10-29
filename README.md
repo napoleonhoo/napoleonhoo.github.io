@@ -3,3 +3,5 @@
 [Click to go to my website](https://napoleonhoo.github.io/)
 
 Special thanks to `cayman` for my entire website theme based on that,  [click here to find cayman](https://github.com/pages-themes/cayman).
+
+本地预览、提交前检查与故障排查见 `.github/DEVELOPMENT.md`。

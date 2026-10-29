@@ -38,14 +38,16 @@ ALLOWED_TAGS = %w[
 
 EXEMPT_MARKER = 'liquid-ok'
 
-SKIP_DIRS = %w[_site vendor node_modules .git .jekyll-cache].freeze
+SKIP_DIRS = %w[_site vendor node_modules .jekyll-cache].freeze
 
 def target_files(argv)
   return argv.select { |f| File.file?(f) } unless argv.empty?
 
   Dir.glob('**/*.{md,markdown}', File::FNM_DOTMATCH).reject do |path|
     parts = path.split(File::SEPARATOR)
-    SKIP_DIRS.any? { |d| parts.include?(d) }
+    # 跳过构建产物，以及点开头的目录（.git/.github 等）——Jekyll 不渲染它们，
+    # 里面的 {{ 不会进入网站，检查没有意义。与 check-links.rb 的口径保持一致。
+    SKIP_DIRS.any? { |d| parts.include?(d) } || parts.any? { |s| s.start_with?('.') }
   end.sort
 end
 
