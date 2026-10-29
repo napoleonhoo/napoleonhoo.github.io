@@ -5,12 +5,12 @@ title: 模型
 
 # 常见模型
 
-- [MMoE 论文研读](./1_MMoE.html)
-- [Transformer 论文研读](./1_Transformer.html)
-- [DistBelief](./1_DistBelief.html)
-- [Batch Norm：批标准化](./1_BatchNorm.html)
-- [LayerNorm：层标准化](./2_LayerNorm.html)
-- [TensorFlow](./2_TensorFlow.html)
+- [MMoE 论文研读](./Pub_1_MMoE.html)
+- [Transformer 论文研读](./Pub_1_Transformer.html)
+- [DistBelief](./Pub_1_DistBelief.html)
+- [Batch Norm：批标准化](./Pub_1_BatchNorm.html)
+- [LayerNorm：层标准化](./Pub_2_LayerNorm.html)
+- [TensorFlow](./Pub_2_TensorFlow.html)
 
 # 指标与训练
 

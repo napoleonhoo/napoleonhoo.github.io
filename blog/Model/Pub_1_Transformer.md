@@ -21,7 +21,7 @@
 
 #### 编码器
 
-解码器由 $N=6$ 个完全相同的层组成。每一层有两个子层。第一个是 multi-head self-attention（多头自注意力）机制，第二个是一个简单的、position-wise 的全连接前馈网络。我们在每个子层后面都添加一个残差连接，然后接一个层标准化。*如果对这两个概念不了解的话，可以参看我之前的文章：[残差学习](3_ResidualLearning.html)和[层标准化](2_LayerNorm.html)。* 也就是说，每个子层的输出是 $\mathrm{LayerNorm}(x+\mathrm{Sublayer}(x))$，其中 $\mathrm{Sublayer}$ 是子层自己实现的函数。为了便利这些残差连接，模型里面的所有子层，包括 embedding 层，输出的维度都是 $d_{model} = 512$。
+解码器由 $N=6$ 个完全相同的层组成。每一层有两个子层。第一个是 multi-head self-attention（多头自注意力）机制，第二个是一个简单的、position-wise 的全连接前馈网络。我们在每个子层后面都添加一个残差连接，然后接一个层标准化。*如果对这两个概念不了解的话，可以参看我之前的文章：[残差学习](3_ResidualLearning.html)和[层标准化](Pub_2_LayerNorm.html)。* 也就是说，每个子层的输出是 $\mathrm{LayerNorm}(x+\mathrm{Sublayer}(x))$，其中 $\mathrm{Sublayer}$ 是子层自己实现的函数。为了便利这些残差连接，模型里面的所有子层，包括 embedding 层，输出的维度都是 $d_{model} = 512$。
 
 #### 解码器
 

@@ -4,7 +4,7 @@
 
 ## 1 整体介绍
 
-作者是 NSW（Navigable Small World graph）的作者，HNSW 是 Hierarchical NSW 的缩写。如果还不了解 NSW 的，欢迎大家参考我的上一篇文章 [NSW：ANN 检索算法（一）](./1_NSW.html)。
+作者是 NSW（Navigable Small World graph）的作者，HNSW 是 Hierarchical NSW 的缩写。如果还不了解 NSW 的，欢迎大家参考我的上一篇文章 [NSW：ANN 检索算法（一）](./Pub_1_NSW.html)。
 
 NSW 有的特征，HNSW 都有。比如 navigable、使用贪心算法等。而 HNSW 在 NSW 的基础上做出的升级是什么呢？
 

@@ -6,7 +6,7 @@
 
 ## 1 摘要
 
-LayerNorm 主要来源于对 BatchNorm 的改进，*如果有对 BatchNorm 还不太了解的小伙伴，欢迎大家参考我的另一篇文章：[《BatchNorm：批标准化》](./1_BatchNorm.html)*。
+LayerNorm 主要来源于对 BatchNorm 的改进，*如果有对 BatchNorm 还不太了解的小伙伴，欢迎大家参考我的另一篇文章：[《BatchNorm：批标准化》](./Pub_1_BatchNorm.html)*。
 
 BatchNorm 可以显著地降低前馈神经网络（feed-forward neural network）的训练时间。但是，BatchNorm 的效果依赖于 batch size 的选择，并且不能够很直接的应用于 RNN（循环神经网络，recurrent neural network）。
 
