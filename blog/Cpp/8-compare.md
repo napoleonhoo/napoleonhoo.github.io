@@ -10,4 +10,4 @@ layout: default
 
 ## 指针比较大小
 
-参考[指针比较](../blog/GCC-STL/Pub_unique_ptr.html)
+参考[指针比较](../GCC-STL/Pub_unique_ptr.html)

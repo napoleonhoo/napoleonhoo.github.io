@@ -1241,6 +1241,7 @@ inline void swap(packaged_task<_Res(_ArgTypes...)> & __x, packaged_task<_Res(_Ar
 
 #### `__future_base::_Deferred_state`
 
+{% raw %}
 ``` cpp
 // Shared state created by std::async().
 // Holds a deferred function and storage for its result.
@@ -1272,6 +1273,7 @@ private:
     virtual bool _M_is_deferred_future() const { return true; }
 };
 ```
+{% endraw %}
 
 `_Deferred_state`是`async`函数创建的一种共享状态，持有一个deferred函数，和它的结果。
 
@@ -1279,6 +1281,7 @@ private:
 
 #### `__future_base::_Async_state_impl`
 
+{% raw %}
 ``` cpp
 // Common functionality hoisted out of the _Async_state_impl template.
 class __future_base::_Async_state_commonV2 : public __future_base::_State_base {
@@ -1343,6 +1346,7 @@ private:
     _BoundFn _M_fn;
 };
 ```
+{% endraw %}
 
 类`_Async_state_impl`是由`async`函数创建的共享状态，创建一个新的线程来运行特定的函数并且让共享状态ready。而类`_Async_state_commonV2`是它的一个直接基类。
 

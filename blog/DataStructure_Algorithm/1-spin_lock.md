@@ -6,7 +6,7 @@ layout: default
 
 ## 简介
 
-reference: [wikipedia - Spinlock](./https://en.wikipedia.org/wiki/Spinlock)
+reference: [wikipedia - Spinlock](https://en.wikipedia.org/wiki/Spinlock)
 
 1. 一个线程在获取锁的过程中是循环等待的（spin），一直不断地来检查所是否可用。
 2. busy waiting 忙等待

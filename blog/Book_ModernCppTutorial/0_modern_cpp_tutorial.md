@@ -1,6 +1,6 @@
 ---
 layout: default
-titile: Modern C++ Tutorial
+title: Modern C++ Tutorial
 ---
 
 # Modern C++ Tutorial 阅读笔记

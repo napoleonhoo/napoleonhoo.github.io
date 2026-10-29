@@ -1,6 +1,6 @@
 ---
 layout: default
-titile: 模型
+title: 模型
 ---
 
 # MMoE 论文研读

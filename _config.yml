@@ -1,5 +1,8 @@
 title: Napoleon Hoo's Blog
 description: On Computer & Electronics (N. P. J. Hoo, II)
 show_downloads: false
+# GitHub Pages 的构建机是 UTC，不设时区的话 site.time 会比北京时间慢 8 小时，
+# 晚上 8 点之后的更新会显示成前一天的日期。
+timezone: Asia/Shanghai
 google_analytics:
 theme: jekyll-theme-cayman

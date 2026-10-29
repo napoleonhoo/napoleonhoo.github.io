@@ -1,6 +1,6 @@
 ---
 layout: default
-titile: C++ Basic
+title: C++ Basic
 ---
 
 ## string

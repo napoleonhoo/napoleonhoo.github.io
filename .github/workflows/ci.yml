@@ -1,0 +1,43 @@
+name: CI
+
+# 注意：这个 workflow 只做构建校验，不做部署。
+# 站点仍由 GitHub 内置的 pages-build-deployment 从 master 分支部署，
+# 除非把仓库 Settings -> Pages -> Source 改成 "GitHub Actions"。
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  # 秒级检查：抓 Markdown 里裸露的 {{ / {%。
+  # Jekyll 先跑 Liquid 再跑 Markdown，所以代码块里的 {{ 也会被当变量解析，
+  # 不闭合会让 build 直接失败，闭合则会把代码静默渲染成空字符串。
+  liquid:
+    name: Liquid 分隔符检查
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ruby .github/scripts/check-liquid.rb
+
+  # 用与 GitHub Pages 相同的 github-pages gem 做一次真实构建，
+  # 覆盖 lint 抓不到的问题（缺失的 layout、坏掉的 front matter 等）。
+  build:
+    name: Jekyll 构建
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # 版本号只在 .ruby-version 里维护一处，本地（rbenv）与 CI 共用，
+      # 避免两边各自漂移导致“本地能构建、CI 失败”。
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version-file: .ruby-version
+          bundler-cache: true
+
+      - name: jekyll build
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build --trace

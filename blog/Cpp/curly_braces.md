@@ -9,6 +9,7 @@ Reference:
 
 ## 1 填充各类容器
 
+{% raw %}
 ``` cpp
 // vector
 std::vector<std::string> words = {"the", "mortar", "hoding", "code", "together"};
@@ -22,6 +23,7 @@ std::tuple cue = {3, 2, 1, "go!"};
 // map
 std::map<int, std::string> numbers = {{1, "one"}, {2, "two"}, {3, "three"}};
 ```
+{% endraw %}
 
 ## 2 向函数传递复合参数
 

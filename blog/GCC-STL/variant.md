@@ -670,6 +670,7 @@ inline constexpr bool __exactly_once = __tuple_count_v<_Tp, tuple<_Types...>> ==
 
 ### `Build_FUN`
 
+{% raw %}
 ``` cpp
 // Helper used to check for valid conversions that don't involve narrowing.
 template <typename _Ti>
@@ -710,6 +711,7 @@ struct __accepted_index : integral_constant<size_t, variant_npos> {};
 template <typename _Tp, typename _Variant>
 struct __accepted_index<_Tp, _Variant, void_t<_FUN_type<_Tp, _Variant>>> : _FUN_type<_Tp, _Variant> {};
 ```
+{% endraw %}
 
 
 
