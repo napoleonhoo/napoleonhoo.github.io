@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Napoleon Hoo's Blog on Computer Engineering
+title: On Computer Science & Engineering
+description: Napoleon Hoo's Blog
 ---
 
 # Theme
