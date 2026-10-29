@@ -2,3 +2,9 @@
 ---
 
 @import 'jekyll-theme-cayman';
+
+// 让 footer 与正文之间拉开更多距离
+.site-footer {
+  margin-top: 6rem;
+  padding-top: 2rem;
+}
