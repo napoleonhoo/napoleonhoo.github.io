@@ -2,7 +2,7 @@
 
 > 空指针解引用是 C++ 程序 coredump 的常见原因之一。加在指针使用前进行有效的空指针检查，应当成为开发者的“习惯动作”。本文整理了几个与空指针相关的典型案例：有些错误一眼就能发现，有些则隐藏在表达式、容器接口或类型转换中。真实环境永远会更复杂！
 
-## Case 1 无效的判空逻辑
+## Case 1: 无效的判空逻辑
 
 ``` cpp
 void function(int* ptr) {
@@ -14,7 +14,7 @@ void function(int* ptr) {
 
 这段代码虽然判断了 `ptr` 是否为空，却只打印了一条日志，并没有终止函数的执行。如果后续代码继续解引用 `ptr`，仍然会触发崩溃。这是一个“马虎大意”的手误，却最终演变为线上问题。
 
-## Case 2 bool 表达式中的空指针
+## Case 2: bool 表达式中的空指针
 
 ``` cpp
 void function(std::unordered_map<int, int>* ptr) {
@@ -40,7 +40,7 @@ void function(std::unordered_map<int, int>* ptr) {
     // ...
 }
 ```
-## Case 3 map 的 value 是个空指针
+## Case 3: map 的 value 是个空指针
 
 ``` cpp
 class C {
@@ -77,7 +77,7 @@ void function(std::unordered_map<int, C*>& m) {
 
 使用 `find` 还有一个额外好处：查询失败时不会像 `operator[]` 那样修改容器。
 
-## Case 4 强制类型转换误用引发的空指针
+## Case 4: 强制类型转换误用引发的空指针
 
 ``` cpp
 class A {
